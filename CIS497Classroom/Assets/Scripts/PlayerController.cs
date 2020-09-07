@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Gregory Blevins
+ * Prototype 1
+ * Handles Car movement based on player input
+ */ 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

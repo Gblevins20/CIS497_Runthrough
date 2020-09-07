@@ -1,22 +1,20 @@
 ﻿/*
  * Gregory Blevins
- * Prototype 1
- * Triggers lose condition on vehicle fall
-*/
+ * Challenge 1
+ * Checks if the player has lost
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class LoseOnFall : MonoBehaviour
+public class LossBehaviour : MonoBehaviour
 {
 
-    // Start is called before the first frame update
 
-
+    // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -1)
+        if (transform.position.y>80 || transform.position.y < -51)
         {
             ScoreManager.gameOver = true;
         }
