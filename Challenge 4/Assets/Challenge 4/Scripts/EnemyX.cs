@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Gregory Blevins
+ * Challenge 4
+ * Handles enemy A.I
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +17,8 @@ public class EnemyX : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        playerGoal = GameObject.FindGameObjectWithTag("Player Goal");
+        speed = FindObjectOfType<SpawnManagerX>().speed;
     }
 
     // Update is called once per frame
@@ -36,5 +43,4 @@ public class EnemyX : MonoBehaviour
         }
 
     }
-
 }
