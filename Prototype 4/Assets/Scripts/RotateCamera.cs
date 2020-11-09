@@ -18,6 +18,7 @@ public class RotateCamera: MonoBehaviour
     SpawnManager scoreTracker;
 
     bool gameWin = false;
+    bool firstStart = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class RotateCamera: MonoBehaviour
 
         waveText.text = "Wave: " + scoreTracker.waveNumber;
 
-        Time.timeScale = 1;
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -34,6 +35,13 @@ public class RotateCamera: MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, horizontalInput * rotationSpeed * Time.deltaTime);
+
+        if (firstStart && Input.GetKeyDown(KeyCode.Return))
+        {
+            Time.timeScale = 1;
+            firstStart = false;
+            gameStateText.gameObject.SetActive(false);
+        }
 
         if (gameWin == true && Input.GetKeyDown(KeyCode.R))
         {
